@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+		<section class="main-banner" style="background:#242c36 url({% static 'img/' %}) no-repeat">
+			<div class="container">
+				<div class="caption">
+					<h2>John Doe, Recruiter</h2>
+
+				</div>
+			</div>
+		</section>
+		<!-- Inner Banner -->
+		{% comment %} <section class="inner-banner" style="backend:#242c36 url(https://via.placeholder.com/1920x600)no-repeat;">
+			<div class="container">
+				<div class="caption">
+					<h2>Company Name</h2>
+				</div>
+			</div>
+		</section> {% endcomment %}
+		
+		<section class="jobs">
+			<div class="container">
+				<div class="row heading">
+					<h2>Job Listing</h2>
+				</div>
+				<div class="row top-pad">
+					<div class="filter">
+						<div class="col-md-2 col-sm-3">
+							<p>Search By:</p>
+						</div>
+						
+						
+					</div>
+				</div>
+				<div class="companies">
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/google.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>Front-End developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								 <a href="{% url 'jobdashboardtemplate' %}"><button type="submit"  name="View Job Dashboard">View Job Dashboard</button></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/microsoft.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>Back-End developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								 <a href="{% url 'jobdashboardtemplate' %}"><button type="submit"  name="View Job Dashboard">View Job Dashboard</button></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/apple.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>UI/UX Developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								 <a href="{% url 'jobdashboardtemplate' %}"><button type="submit"  name="View Job Dashboard">View Job Dashboard</button></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/wipro.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>IOS developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								 <a href="{% url 'jobdashboardtemplate' %}"><button type="submit"  name="View Job Dashboard">View Job Dashboard</button></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/twitter.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>Market Holder</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								 <a href="{% url 'jobdashboardtemplate' %}"><button type="submit"  name="View Job Dashboard">View Job Dashboard</button></a>
+							</div>
+						</div>
+					</div>
+									<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/twitter.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>Back-End developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								 <a href="{% url 'jobdashboardtemplate' %}"><button type="submit"  name="View Job Dashboard">View Job Dashboard</button></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/microsoft.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>UI/UX Developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								<button type="submit"  name="View Job Dashboard">View Job Dashboard</button>
+							</div>
+						</div>
+					</div>
+					
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/wipro.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>IOS developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								<button type="submit" name="View Job Dashboard">View Job Dashboard</button>
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
+				<div class="row">
+				 <a href="{% url 'addjoblisting' %}"><input type="button" class="btn brows-btn" value="Add Job Listing" /></a>
+				</div>
+			</div>
+		</section>
+
+
+{% endblock %}

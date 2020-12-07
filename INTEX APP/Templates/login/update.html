@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header class="masthead" style="text-align: center;">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <form action="{% url 'update' %}" method="post" name="form">
+                <fieldset>
+                    <legend>
+                        Enter Account Information
+                    </legend>
+                    {% csrf_token %}
+                    <p>Please enter your username and password. Then feel free to change your perfered email or phone number!</p>
+                    <label for="user_name">User Name</label>
+                    <input id="user_name" name="user_name" type="text"><br><br>
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="text"><br><br><br><br>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="text"><br><br>
+                    <label for="phone_number">Phone Number</label>
+                    <input id="phone_number" name="phone_number" type="text"><br><br>
+                    <button id="submitbutton" type="submit">Update Account</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</header>
+{% endblock %}

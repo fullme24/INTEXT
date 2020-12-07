@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+		<section class="main-banner" style="background:#242c36 url({% static 'img/' %}) no-repeat">
+			<div class="container">
+				<div class="caption">
+					<h2>Job Search</h2>
+					<form>
+						<fieldset>
+					
+								<input type="text" class="form-control " placeholder="What" />
+
+                 
+                                <input type="text" class="form-control " placeholder="Where" />
+                    
+                            <div class="col-md-3 col-sm-3 no-pad">
+								<select class="selectpicker ">
+                                <option>Company</option>
+                                <option>Company 1</option>
+                                <option>Company 2</option>
+                                <option>Company 3</option>
+								</select>
+							</div>
+							<div class="col-md-3 col-sm-3 no-pad">
+								<select class="selectpicker ">
+                                <option>Location</option>
+                                <option>Location 1</option>
+                                <option>Location 2</option>
+                                <option>Location 3</option>
+                                <option>Location 4</option>
+								</select>
+							</div>
+							<div class="col-md-3 col-sm-3 no-pad">
+								<select class="selectpicker">
+								  <option>Job Category</option>
+								  <option>Accounf & Finance</option>
+								  <option>Information & Technology</option>
+								  <option>Marketing</option>
+								  <option>Food & Restaurent</option>
+								</select>
+							</div>
+							<div class="col-md-2 col-sm-2 no-pad">
+								<input type="submit" class="btn seub-btn" value="Search" />
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</section>
+		<!-- Inner Banner -->
+		{% comment %} <section class="inner-banner" style="backend:#242c36 url(https://via.placeholder.com/1920x600)no-repeat;">
+			<div class="container">
+				<div class="caption">
+					<h2>Company Name</h2>
+				</div>
+			</div>
+		</section> {% endcomment %}
+		
+		<section class="jobs">
+			<div class="container">
+				<div class="row top-pad">
+					<div class="filter">
+						<div class="col-md-2 col-sm-3">
+							<p>Search By:</p>
+						</div>
+						
+						<div class="col-md-10 col-sm-9 pull-right">
+							<ul class="filter-list">
+								<li>
+									<input id="checkbox-1" class="checkbox-custom" name="checkbox-1" type="checkbox" checked="">
+									<label for="checkbox-1" class="part-time checkbox-custom-label">Part Time</label>
+								</li>
+								
+								<li>
+									<input id="checkbox-2" class="checkbox-custom" name="checkbox-2" type="checkbox">
+									<label for="checkbox-2" class="full-time checkbox-custom-label">Full Time</label>
+								</li>
+								
+								<li>
+									<input id="checkbox-3" class="checkbox-custom" name="checkbox-3" type="checkbox">
+									<label for="checkbox-3" class="freelancing checkbox-custom-label">Freelancing</label>
+								</li>
+								
+								<li>
+									<input id="checkbox-4" class="checkbox-custom" name="checkbox-4" type="checkbox">
+									<label for="checkbox-4" class="internship checkbox-custom-label">Internship</label>
+								</li>
+
+							</ul>	
+						</div>
+					</div>
+				</div>
+				<div class="companies">
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/google.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>Front-End developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+							 <a href="{% url 'descriptiontemplate' %}"><button type="submit" class="btn view-job" name="View Job">View Job</button></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/microsoft.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>Back-End developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								 <a href="{% url 'descriptiontemplate' %}"><button type="submit" class="btn view-job" name="View Job">View Job</button></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/apple.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>UI/UX Developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								 <a href="{% url 'descriptiontemplate' %}"><button type="submit" class="btn view-job" name="View Job">View Job</button></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/wipro.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>IOS developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+							 <a href="{% url 'descriptiontemplate' %}"><button type="submit" class="btn view-job" name="View Job">View Job</button></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/twitter.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>Market Holder</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								 <a href="{% url 'descriptiontemplate' %}"><button type="submit" class="btn view-job" name="View Job">View Job</button></a>
+							</div>
+						</div>
+					</div>
+									<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/twitter.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>Back-End developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								 <a href="{% url 'descriptiontemplate' %}"><button type="submit" class="btn view-job" name="View Job">View Job</button></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/microsoft.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>UI/UX Developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								 <a href="{% url 'descriptiontemplate' %}"><button type="submit" class="btn view-job" name="View Job">View Job</button></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/wipro.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>IOS developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								 <a href="{% url 'descriptiontemplate' %}"><button type="submit" class="btn view-job" name="View Job">View Job</button></a>
+							</div>
+						</div>
+					</div>
+
+                <h2>Job Recommendations - Based on your search/skills</h2>
+					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/wipro.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>IOS developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+                    					<div class="company-list">
+						<div class="row">
+							<div class="col-md-2 col-sm-2">
+								<div class="company-logo">
+									<img src="{% static 'img/microsoft.png' %}" class="img-responsive" alt="" />
+								</div>
+							</div>
+							<div class="col-md-8 col-sm-8">
+								<div class="company-content">
+									<h3>UI/UX Developer</h3>
+									<p><span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span class="company-location"><i class="fa fa-map-marker"></i> 7th Avenue, New York, NY, United States</span><span class="package"><i class="fa fa-money"></i>$25,000-$50,000</span></p>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2">
+								<button type="submit" class="btn view-job" name="View Job">View Job</button>
+							</div>
+						</div>
+					</div>
+
+
+					
+				</div>
+				<div class="row">
+					<input type="button" class="btn brows-btn" value="Browse All Jobs" />
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+{% endblock %}

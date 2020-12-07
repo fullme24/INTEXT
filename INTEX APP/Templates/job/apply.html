@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            {% comment %} <form action="{% url 'created' %}" method="post" name='form'> {% endcomment %}
+             <form method="post" name='form'>
+            <br><br>
+
+                        <h2>Apply For Job Name</h2>
+                
+
+                 <fieldset >
+                 <legend>1. Job Information</legend>
+                    {% csrf_token %}
+                    <label for="jobtitle">Job Title</label>
+                    <input id="jobtitle" name="jobtitle" type="text"><br><br>
+                    <label for="skill">Skills</label>
+                    <input id="skill" name="skill" type="text"><br><br>
+                    <label for="lname">Recruiter Last Name</label>
+                    <input id="lname" name="lname" type="text"><br><br>
+                    <select class="selectpicker">
+								  <option>Job Category</option>
+								  <option>Accounf & Finance</option>
+								  <option>Information & Technology</option>
+								  <option>Marketing</option>
+								  <option>Food & Restaurent</option>
+					</select>
+                    <br><br>
+                    <label for="city">City</label>
+                    <input id="city" name="city" type="text"><br><br>
+                    <label for="state">State</label>
+                    <input id="state" name="state" type="text"><br><br>
+                    <label for="zip">Zip Code</label>
+                    <input id="zip" name="zip" type="text"><br><br>
+                </fieldset>
+                <fieldset>
+                <legend>2. Job Description</legend>
+                 {% csrf_token %}
+              
+                <input type="text" class="form-control " placeholder="Put your Job Description Here" />
+	
+                </fieldset>
+
+               
+
+               
+
+
+                    <button id="submitbutton" type="submit">Create Listing</button>
+                </fieldset>
+            </form>
+            <br>
+           
+        </div>
+    </div>
+</header>
+{% endblock %}

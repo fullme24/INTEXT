@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header class="masthead" style="text-align: center;">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <form action="{% url 'delete' %}" method="post" name="form">
+                <fieldset>
+                    <legend>
+                        Enter Account Information
+                    </legend>
+                    {% csrf_token %}
+                    <label for="user_name">User Name</label>
+                    <input id="user_name" name="user_name" type="text"><br><br>
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="text"><br><br>
+                    <button id="submitbutton" type="submit">Delete Account</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</header>
+{% endblock %}

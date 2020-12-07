@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}	
+		<!-- Main jumbotron for a primary marketing message or call to action -->
+		<section class="main-banner" style="background:#242c36 url({% static 'img/slider-pic.jpg'%}) no-repeat">
+			<div class="container">
+				<div class="caption">
+					<h2>Build Your Career</h2>
+					<form>
+						<fieldset>
+							<div class="col-md-4 col-sm-4 no-pad">
+								<input type="text" class="form-control border-right" placeholder="Skills, Designation, Companies" />
+							</div>
+							<div class="col-md-3 col-sm-3 no-pad">
+								<select class="selectpicker border-right">
+								  <option>Experience</option>
+								  <option>0 Year</option>
+								  <option>1 Year</option>
+								  <option>2 Year</option>
+								  <option>3 Year</option>
+								  <option>4 Year</option>
+								  <option>5 Year</option>
+								  <option>6 Year</option>
+								  <option>7 Year</option>
+								  <option>8 Year</option>
+								  <option>9 Year</option>
+								 <option>10 Year</option>
+								</select>
+							</div>
+							<div class="col-md-3 col-sm-3 no-pad">
+								<select class="selectpicker">
+								  <option>Select Category</option>
+								  <option>Accounf & Finance</option>
+								  <option>Information & Technology</option>
+								  <option>Marketing</option>
+								  <option>Food & Restaurent</option>
+								</select>
+							</div>
+							<div class="col-md-2 col-sm-2 no-pad">
+								<input type="submit" class="btn seub-btn" value="search" />
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</section>
+		
+		<section class="features">
+			<div class="container">
+				<div class="col-md-4 col-sm-4">
+					<div class="features-content">
+						<span class="box1"><span aria-hidden="true" class="icon-dial"></span></span>
+						<a href="{% url 'create' %}"><h3>Create an Account</h3></a>
+						<p>Create your free BCR account to start your job search journey now!</p>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-4">
+					<div class="features-content">
+						<span class="box1"><span aria-hidden="true" class="icon-search"></span></span>
+						<a href="{% url 'jobsearchtemplate' %}"><h3>Search for a Job</h3></a>
+						<p>Find the Right Job for you</p>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-4">
+					<div class="features-content">
+						<span class="box1"><span aria-hidden="true" class="icon-printer"></span></span>
+						<a href="{% url 'profiletemplate' %}"><h3>View your Resume</h3></a>
+						<p>Click here to send in your resume</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-4">
+					<div class="features-content">
+						<span class="box1"><span aria-hidden="true" class="icon-dial"></span></span>
+						<a href="{% url 'deletetemp' %}"><h3>Delete an Account</h3></a>
+						<p>Delete</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-4">
+				<div class="features-content">
+					<span class="box1"><span aria-hidden="true" class="icon-dial"></span></span>
+					<a href="{% url 'updatetemp' %}"><h3>Update an Account</h3></a>
+					<p>Update</p>
+				</div>
+			</div>
+				
+				
+			
+			</div>
+		</section>
+		
+	
+		
+		
+
+{% endblock %} 

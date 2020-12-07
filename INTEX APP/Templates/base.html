@@ -1,0 +1,123 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Black Cyber Recruiter | Responsive Job Portal </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+        <!-- All Plugin Css --> 
+		<link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+		
+		<!-- Style & Common Css --> 
+		<link rel="stylesheet" href="{% static 'css/common.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    </head>
+	
+    <body>
+	
+		<!-- Navigation Start  -->
+		<nav class="navbar navbar-default navbar-sticky bootsnav">
+
+			<div class="container">      
+				<!-- Start Header Navigation -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+						<i class="fa fa-bars"></i>
+					</button>
+					<a class="navbar-brand" href="{% url 'indexpage' %}"><img src="{% static 'img/logo1.png' %}" class="logo" alt=""></a>
+				</div>
+				<!-- End Header Navigation -->
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="navbar-menu">
+					<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+							<li><a href="{% url 'indexpage' %}">Home</a></li> 
+							<li><a href="{% url 'login' %}">Login</a></li>
+							<li><a href="{% url 'companylistingtemplate' %}">Companies</a></li> 
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse</a>
+								<ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
+									<li class="active"><a href="{% url 'recruiterlistingtemplate' %}">Browse Jobs</a></li>
+									<li><a href="{% url 'jobsearchtemplate' %}">Job Search</a></li>
+									<li><a href="{% url 'profiletemplate' %}">Profile Detail</a></li>
+								</ul>
+							</li>
+						</ul>
+				</div><!-- /.navbar-collapse -->
+			</div>   
+		</nav>
+		<!-- Navigation End  -->
+		
+        
+        {% block content %}
+        {% endblock %}
+
+
+			
+		<!-- footer start -->
+		<footer>
+			<div class="container">
+				<div class="col-md-3 col-sm-6">
+					<h4>Information</h4>
+					<ul>
+						<li><a href="#">About Adobe XD Kit</a></li>
+						<li><a href="#">Work With Us</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Terms and Conditions</a></li>
+						<li><a href="#">Press Enquiries</a></li>
+					</ul>
+				</div>
+				
+				<div class="col-md-3 col-sm-6">
+					<h4>Services</h4>
+					<ul>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">Ordering and Payment</a></li>
+						<li><a href="#">Shipping</a></li>
+						<li><a href="#">Returns</a></li>
+						<li><a href="#">FAQ</a></li>
+						<li><a href="#">Sizing Guide</a></li>
+					</ul>
+				</div>
+				
+				<div class="col-md-3 col-sm-6">
+					<h4>Contact Us</h4>
+					<address>
+					<ul>
+					<li>123 Main Street, Provo, UT<br>
+					United States</li>
+					<li>Email: bcr@gmail.com</li>
+					<li>Call: 123 456 7890</li>
+					<li>Skype: bcr@skype</li>
+					<li>FAX: 123 456 85</li>
+					</ul>
+					</address>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<h4>Drop A Mail</h4>
+					<form>
+						<input type="text" class="form-control input-lg" placeholder="Your Name">
+						<input type="text" class="form-control input-lg" placeholder="Email...">
+						<textarea class="form-control" placeholder="Message"></textarea>
+						<button type="submit" class="btn btn-primary">Login</button>
+					</form>
+				</div>
+				
+			</div>
+			<div class="copy-right">
+			 <p>&copy;Copyright 2018 Black Cyber Recruiter | Design By <a href="https://themezhub.com/">ThemezHub</a></p>
+			</div>
+		</footer>
+		 
+		<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'js/bootsnav.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>
