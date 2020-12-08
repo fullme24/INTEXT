@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import People
+
 
 def loginTemplate(request) :
     return render(request, 'login/login.html')
