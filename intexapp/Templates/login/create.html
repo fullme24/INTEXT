@@ -6,18 +6,15 @@
         <div class="mx-auto text-center">
             {% comment %} <form action="{% url 'created' %}" method="post" name='form'> {% endcomment %}
              <form action="{% url 'created' %}" method="post" name='form'>
-            <br><br>
-
-                        <h2>Create Account</h2>
-                
-
-                 <fieldset >
-                 <legend>1. Your Information</legend>
+                <br><br>
+                    <h2>Create Account</h2>
+                 <fieldset>
+                    <legend>1. Your Information</legend>
                     {% csrf_token %}
                     <label for="user_name">User Name</label>
                     <input id="user_name" name="user_name" type="text"><br><br>
                     <label for="password" >Password</label>
-                    <input id="password" name="password" type="text"><br><br>
+                    <input id="password" type='password' name="password" type="text"><br><br>
                     <label for="email">Email</label>
                     <input id="email" name="email" type="text"><br><br>
                     <label for="phone_number">Phone Number</label>
@@ -25,39 +22,43 @@
                     <label for="first_name">First Name</label>
                     <input id="first_name" name="first_name" type="text"><br><br>
                     <label for="last_name">Last Name</label>
-                    <input id="last_name" name="lasst_name" type="text"><br><br>
+                    <input id="last_name" name="last_name" type="text"><br><br>
+                    <label for="DOB">Birthdate</label>
+                    <input id="DOB" type="date" name="birthdate" 
+                    placeholder="yyyy-mm-dd" value=""
+                    min="1997-01-01" max="2030-12-31"><br><br>
                     <label for="city">City</label>
                     <input id="city" name="city" type="text"><br><br>
                     <label for="state">State</label>
-                    <input id="state" name="state" type="text"><br><br>
+                    <input id="state" name="state" type="text" maxlength='2'><br><br>
                     <label for="zip">Zip Code</label>
                     <input id="zip" name="zip" type="text"><br><br>
                 </fieldset>
                 <fieldset>
-                <legend>2. Setup Job Preference</legend>
-                 {% csrf_token %}
-              
-								<select class="selectpicker border-right">
-								  <option>Technology</option>
-								  <option>Agriculture</option>
-								  <option>Business</option>
-								  <option>Pharmacy</option>
-								  <option>Service</option>
-								</select>
-	
+                    <legend>2. Setup Job Preference</legend>
+                    {% csrf_token %}
+                    <select class="selectpicker border-right">
+                        <option>Technology</option>
+                        <option>Agriculture</option>
+                        <option>Business</option>
+                        <option>Pharmacy</option>
+                        <option>Service</option>
+                    </select>
                 </fieldset>
-
                 <br><br>
                 <legend>3. Upload Your Resume</legend>
-
-                <br><br>
-
-                <legend>4. Upload Your Profile Picture</legend>
-
+                    <form method="POST" enctype="multipart/form-data" name="form">
+                        {% csrf_token %}
+                        <input type="file" name="resume" id="resume">
+                    </form>
                     <br><br>
-
-
-                    <button id="submitbutton" type="submit">Create Account</button>
+                <legend>4. Upload Your Profile Picture</legend>
+                    <form method="POST" enctype="multipart/form-data" name="form">
+                        {% csrf_token %}
+                        <input type="file" name="profile" id="profile">
+                        <button type="submit">Create Account</button>
+                    </form>
+                    <br><br>
                 </fieldset>
             </form>
             <br>

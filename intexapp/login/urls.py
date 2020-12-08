@@ -10,4 +10,4 @@ urlpatterns = [
     path("update_account/", updateView, name="update"),
     path("update/", updateTemplate, name="updatetemp"),
     path('logged_in/', loggedTemplate, name="logged_in"),
-]       
+]
