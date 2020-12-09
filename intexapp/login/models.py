@@ -90,7 +90,7 @@ class CompanyEmployee(models.Model):
     jobTitle = models.CharField(max_length=20, null=True)
 
     def __str__(self):
-        return (self.jobTitle)
+        return (self.personID)
 
 class JobListings(models.Model):
     jobListingID = models.AutoField(primary_key=True)

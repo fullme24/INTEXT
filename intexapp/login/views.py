@@ -46,7 +46,7 @@ def deleteTemplate(request):
     return render(request, 'login/delete.html')
 
 def deleteView(request):
-    person = Person.objects.filter(user_name=request.POST['user_name'], password=request.POST['password']).delete()
+    person = Person.objects.filter(username=request.POST['user_name'], password=request.POST['password']).delete()
     return render(request, 'homepage/index.html')
 
 def updateTemplate(request):
@@ -67,6 +67,7 @@ def updateView(request):
         aboutMe = request.POST.get('aboutMe')
         jobExperience = request.POST.get('jobExperience')
         ethnicity = request.POST.get('minorityType')
+        print(ethnicity)
         ethnicityID = MinorityType.objects.filter(type = ethnicity)
         person = Person.objects.get(username=user_name, password=password)
         
