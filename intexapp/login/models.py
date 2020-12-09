@@ -12,7 +12,7 @@ class MinorityType(models.Model):
 
 class Resumes(models.Model):
     resumeID = models.AutoField(primary_key=True)
-    resumefile = models.FileField(upload_to='photos/')
+    resumefile = models.ImageField(upload_to='photos')
     uploadDate = models.DateTimeField(auto_now_add=True)
 
 class Person(models.Model):
@@ -32,12 +32,21 @@ class Person(models.Model):
     long = models.DecimalField(max_digits=11, decimal_places=8, null=True)
     username = models.CharField(max_length=30)
     password = models.CharField(max_length=30)
+<<<<<<< Updated upstream
     facebook = models.CharField(max_length=100, null=True)
     linkedin = models.CharField(max_length=100, null=True)
     twitter = models.CharField(max_length=100, null=True)
     profilePic = models.FileField(upload_to='photos', null=True)
     aboutMe = models.CharField(max_length=250, null=True)
     jobExperience = models.CharField(max_length=250, null=True)
+=======
+    facebook = models.CharField(max_length=100, null=True, blank=True)
+    linkedin = models.CharField(max_length=100, null=True, blank=True)
+    twitter = models.CharField(max_length=100, null=True, blank=True)
+    profilePic = models.ImageField(upload_to='photos', null=True, blank=True)
+    aboutMe = models.CharField(max_length=250, null=True, blank=True)
+    jobExperience = models.CharField(max_length=250, null=True, blank=True)
+>>>>>>> Stashed changes
 
     @property
     def full_name(self):
@@ -70,7 +79,7 @@ class Company (models.Model):
     facebook = models.CharField(max_length=100, null=True)
     linkedin = models.CharField(max_length=100, null=True)
     twitter = models.CharField(max_length=100, null=True)
-    profilePic = models.FileField(upload_to='photos', null=True)
+    profilePic = models.ImageField(upload_to='photos', null=True)
 
     def __str__(self):
         return (self.companyName)
