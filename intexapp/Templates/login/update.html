@@ -30,7 +30,7 @@
                     <input id="state" name="state" type="text"><br><br>
 
                     <label for="minorityType" class="ethnicity">Ethnicity</label>         
-                    <select class="selectpicker border-right">
+                    <select class="selectpicker border-right" name='minorityType'>
                         <option>----Select Ethnicity----</option>
                         {% for eth in minorityTypes%}
                         <option>{{eth.type}}</option>

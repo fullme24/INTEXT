@@ -66,9 +66,8 @@ def updateView(request):
         linkedin = request.POST.get('linkedin')
         aboutMe = request.POST.get('aboutMe')
         jobExperience = request.POST.get('jobExperience')
-        ethnicity = request.POST.get('minorityType')
-        print(ethnicity)
-        ethnicityID = MinorityType.objects.filter(type = ethnicity)
+        type = request.POST.get('minorityType')
+        ethnicityID = MinorityType.objects.get(type = type)
         person = Person.objects.get(username=user_name, password=password)
         
         if email != '':
@@ -89,7 +88,7 @@ def updateView(request):
             person.aboutMe = aboutMe
         if jobExperience != '':
             person.jobExperience = jobExperience
-        if ethnicity != '':
+        if ethnicityID != None:
             person.minorityTypeID_id = ethnicityID.minorityTypeID
 
         person.save()

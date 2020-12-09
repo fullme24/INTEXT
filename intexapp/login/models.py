@@ -11,7 +11,7 @@ class PersonType(models.Model):
         return (self.type)
 
 class MinorityType(models.Model):
-    minorityTypeID = models.AutoField()
+    minorityTypeID = models.AutoField(primary_key=True)
     type = models.CharField(max_length=15)
     class Meta:
         db_table = "login_minoritytype"
