@@ -49,22 +49,31 @@ class Person(models.Model):
 class CategoryType (models.Model):
     categoryTypeID = models.AutoField(primary_key=True)
     type = models.CharField(max_length=15)
+
+    def __str__(self):
+        return (self.type)
     
 class CompanySize (models.Model):
     companySizeID = models.AutoField(primary_key=True)
     size = models.CharField(max_length=15)
 
+    def __str__(self):
+        return (self.size)
+
 class Company (models.Model):
     companyID = models.AutoField(primary_key=True)
-    companyName = models.CharField(max_length=30)
+    companyName = models.CharField(max_length=70)
     categoryTypeID = models.ForeignKey(CategoryType, on_delete=models.CASCADE, null=True)
     companySizeID = models.ForeignKey(CompanySize, on_delete=models.CASCADE, null=True)
-    companyDescription = models.CharField(max_length=250, null=True)
+    companyDescription = models.CharField(max_length=500, null=True)
     website = models.CharField(max_length=100, null=True)
     facebook = models.CharField(max_length=100, null=True)
     linkedin = models.CharField(max_length=100, null=True)
     twitter = models.CharField(max_length=100, null=True)
     profilePic = models.FileField(upload_to='photos', null=True)
+
+    def __str__(self):
+        return (self.companyName)
 
 class CompanyEmployee(models.Model):
     employeeID = models.AutoField(primary_key=True)

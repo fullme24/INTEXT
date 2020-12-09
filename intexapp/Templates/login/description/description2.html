@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}	
+		<section class="inner-banner" style="backend:#242c36 url(https://via.placeholder.com/1920x600)no-repeat;">
+			<div class="container">
+				<div class="caption">
+					<h2>{{job2.jobTitle}}</h2>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="profile-detail">
+			<div class="container">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="basic-information">
+							<div class="col-md-3 col-sm-3">
+							 <img src="{% static 'img/' %}" alt="" class="img-responsive">
+							</div>
+							<div class="col-md-9 col-sm-9">
+								<div class="profile-content">
+										<h2>{{job2.companyID}}<span>{{company2.categoryTypeID_id}}</span></h2>
+										
+										<ul class="information">
+											<li><span>Website:</span>{{company2.website}}</li>
+											<li><span>Company Size:</span>{{company2.companySizeID_id}}</li>
+											<li><span>Mobile:</span>{{company2.phone}}</li>
+											<li><span>Location:</span>{{job2.city}} {{job2.state}} {{job2.ZIP}}</li>
+										</ul>
+									</div>
+								</div>
+							<ul class="social">
+								<li><a href="{{company2.facebook}}" class="facebook"><i class="fa fa-facebook"></i>Facebook</a></li>
+								<li><a href="{{company2.twitter}}" class="twitter"><i class="fa fa-twitter"></i>Twitter</a></li>
+								<li><a href="{{company2.linkedin}}" class="linkedin"><i class="fa fa-linkedin"></i>Linked In</a></li>
+							</ul>
+                            <input type="button" class="btn brows-btn" value="Save Job" />
+
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<i class="fa fa-user fa-fw"></i> Job Description
+								</div>
+													<!-- /.panel-heading -->
+								<div class="panel-body">
+								<p>{{job2.description}}</p>	
+								</div>
+							</div>
+							<input type="button" class="btn brows-btn" value="Apply" />
+                            <input type="button" class="btn brows-btn" value="Save Job" />
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+{% endblock %} 

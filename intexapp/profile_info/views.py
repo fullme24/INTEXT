@@ -1,8 +1,17 @@
 from django.shortcuts import render
+# from intexapp.login.models import Person
+
 
 # Create your views here.
 def ProfileTemplate(request) :
-    return render(request, 'profile_info/myprofile.html')
+        # data = Person.objects.all()
+    
+        # context = {
+        #     "our_emps" : data
+        # }
+        return render(request, 'profile_info/myprofile.html')
+
+
 
 def CompanyProfileTemplate(request) :
     return render(request, 'profile_info/companyprofile.html')
