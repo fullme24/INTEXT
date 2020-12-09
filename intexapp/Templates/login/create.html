@@ -4,11 +4,10 @@
 <header class="masthead">
     <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
-            {% comment %} <form action="{% url 'created' %}" method="post" name='form'> {% endcomment %}
              <form action="{% url 'created' %}" method="post" name='form'>
                 <br><br>
-                    <h2>Create Account</h2>
-                 <fieldset>
+                <h2>Create Account</h2>
+                <fieldset>
                     <legend>1. Your Information</legend>
                     {% csrf_token %}
                     <label for="user_name">User Name</label>
@@ -33,43 +32,38 @@
                     <input id="state" name="state" type="text" maxlength='2'><br><br>
                     <label for="zip">Zip Code</label>
                     <input id="zip" name="zip" type="text"><br><br>
-                </fieldset>
-                <fieldset>
                     <legend>2. Setup Job Preference</legend>
                     {% csrf_token %}
-                    <select class="selectpicker border-right">
+                    <select class="selectpicker border-right" name='minorityType'>
                         <option>----Select Job Preference----</option>
                         {% for job in jobtypes %}
                         <option>{{job.type}}</option>
                         {% endfor %}
                     </select>
-                </fieldset>
-                <br><br>
-                <fieldset>
+                    <br><br>
                     <legend>3. Demographics</legend>
                     {% csrf_token %}
-                    <select id="ethnicity" class="selectpicker border-right">
+                    <select id="ethnicity" class="selectpicker border-right" name='minorityType'>
                         <option>----Select Ethnicity----</option>
                         {% for eth in minorityTypes%}
                         <option>{{eth.type}}</option>
                         {% endfor %}
                     </select>
-                </fieldset>
-                <br><br>
-                <legend>3. Upload Your Resume</legend>
+                    <br><br>
+                    <legend>3. Upload Your Resume</legend>
                     <form method="POST" enctype="multipart/form-data" name="form">
                         {% csrf_token %}
                         <input type="file" name="resume" id="resume">
                     </form>
                     <br><br>
-                <legend>4. Upload Your Profile Picture</legend>
+                    <legend>4. Upload Your Profile Picture</legend>
                     <form method="POST" enctype="multipart/form-data" name="form">
                         {% csrf_token %}
                         <input type="file" name="profile" id="profile">
                     </form>
                     <br><br>
+                    <input id="submitbutton" type="submit" value="Create Account">
                 </fieldset>
-                <button type="submit">Create Account</button>
             </form>
             <br>
            

@@ -1,8 +1,67 @@
 from blackcyberrecruiter.settings import DATABASES
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.db.models.aggregates import Min, Max
 from django.core.files.storage import FileSystemStorage
 from .models import Applications, Person, PersonType, MinorityType, CompanyEmployee, Company, CategoryType, CompanySize, JobListings, JobOffers, Resumes, SavedJobs, SkillLevel, Skills, Applications, Resumes
+
+
+def listingRecruiterView(request) :
+        persondata = Person.objects.get(pk=1)
+        companydata = Company.objects.get(pk=1)
+        job1 = JobListings.objects.get(pk=1)
+        job2 = JobListings.objects.get(pk=2)
+        job3 = JobListings.objects.get(pk=3)
+        job4 = JobListings.objects.get(pk=4)
+        job5 = JobListings.objects.get(pk=5)
+        job6 = JobListings.objects.get(pk=6)
+        job7 = JobListings.objects.get(pk=7)
+        job8 = JobListings.objects.get(pk=8)
+        job9 = JobListings.objects.get(pk=9)
+        job10 = JobListings.objects.get(pk=10)
+        context = {
+            "person" : persondata,
+            "company": companydata,
+            "job1": job1,
+            "job2": job2,
+            "job3": job3,
+            "job4": job4,
+            "job5": job5,
+            "job6": job6,
+            "job7": job7,
+            "job8": job8,
+            "job9": job9,
+            "job10": job10
+        }
+        return render(request, 'login/listing_recruiter.html',context)
+def listingjobsearchView(request) :
+        persondata = Person.objects.get(pk=1)
+        companydata = Company.objects.get(pk=1)
+        job1 = JobListings.objects.get(pk=1)
+        job2 = JobListings.objects.get(pk=2)
+        job3 = JobListings.objects.get(pk=3)
+        job4 = JobListings.objects.get(pk=4)
+        job5 = JobListings.objects.get(pk=5)
+        job6 = JobListings.objects.get(pk=6)
+        job7 = JobListings.objects.get(pk=7)
+        job8 = JobListings.objects.get(pk=8)
+        job9 = JobListings.objects.get(pk=9)
+        job10 = JobListings.objects.get(pk=10)
+        context = {
+            "person" : persondata,
+            "company": companydata,
+            "job1": job1,
+            "job2": job2,
+            "job3": job3,
+            "job4": job4,
+            "job5": job5,
+            "job6": job6,
+            "job7": job7,
+            "job8": job8,
+            "job9": job9,
+            "job10": job10
+        }
+        return render(request, 'login/jobsearch.html',context)
 
 def profileView(request) :
         persondata = Person.objects.get(pk=1)
@@ -13,7 +72,7 @@ def profileView(request) :
             "company": companydata,
             "job": jobdata
         }
-        return render(request, 'login/myprofile.html',context)
+        return render(request, 'login/myprofile.html', context)
 
 def listingsView(request) :
         persondata = Person.objects.get(pk=1)
@@ -138,6 +197,8 @@ def CreatedLoginView(request):
         
         #Create a new employee object from the model (like a new record)
         new_person = Person()
+        max_pk = Person.objects.all().aggregate(Max('personID'))
+        new_person.personID = max_pk['personID__max'] + 1
 
         #Store the data from the form to the new object's attributes (like columns)
         new_person.username = request.POST.get('user_name')
@@ -150,8 +211,11 @@ def CreatedLoginView(request):
         new_person.city = request.POST.get('city')
         new_person.state = request.POST.get('state')
         new_person.ZIP = request.POST.get('zip')
-        new_person.minorityTypeID = request.POST.get('ethnicity')
-
+        new_type = request.POST.get('minorityType')
+        print(new_type)
+        ethnicityID = MinorityType.objects.get(type = new_type)
+        new_person.minorityTypeID_id = ethnicityID.minorityTypeID
+        print(new_person.minorityTypeID)
         new_person.save()
 
     return render(request, 'login/login.html')
@@ -210,25 +274,19 @@ def updateView(request):
     return render(request, 'login/login.html')
 
 def loggedTemplate(request):
-    request.session.pop('logged-in', default=False)
-    request.session.pop('userID', default=7)
     if request.method == 'POST':
         sUser_name = request.POST.get('user_name')
         sPassword = request.POST.get('password')
-        if request.session.get('logged-in', False):
-            greeting = ''
-            try:
-                data = Person.objects.get(user_name=sUser_name, password=sPassword)
-                greeting = 'Welcome Back!'
-                request.session['logged-in'] = True
-                request.session['userID'] = data.personID
-            except:
-                #data = 'No account matches. Please try again or Create a new account'
-                greeting = 'Sorry! Please try again or Create a new account'
+        data = Person.objects.filter(username=sUser_name, password=sPassword)
+        
+        if data.count() > 0:
+            context = {
+                'person_data' : data
+            }
+            return render(request, 'homepage/index.html', context)
         else:
-            greeting= 'User Signed Out- Please sign in'
-            request.session['logged-in'] = False
-    content = {
-        'data': DATABASES
-    }
-    return render(request, 'login/logged_in.html')
+            data = 'No account matches. Please try again or Create a new account'
+            context = {
+                'person_data' : data
+            }
+            return render(request, 'login/login.html', context)
