@@ -5,6 +5,7 @@ from django.shortcuts import render
 # Create your views here.
 def ProfileTemplate(request) :
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         # data = Person.objects.all()
     
         # context = {
@@ -14,12 +15,17 @@ def ProfileTemplate(request) :
 
 
 =======
+=======
+>>>>>>> Stashed changes
     data = Person.objects.all()
 
     context = {
             "person" : data
     }
     return render(request, 'profile_info/myprofile.html', context)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 def CompanyProfileTemplate(request) :
