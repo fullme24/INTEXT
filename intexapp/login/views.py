@@ -249,4 +249,4 @@ def loggedTemplate(request):
     content = {
         'data': DATABASES
     }
-    return render(request, 'login/logged_in.html')
+    return render(request, 'login/myprofile.html')

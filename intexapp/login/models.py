@@ -28,8 +28,6 @@ class Person(models.Model):
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
     ZIP = models.IntegerField()
-    lat = models.DecimalField(max_digits=10, decimal_places=8, null=True)
-    long = models.DecimalField(max_digits=11, decimal_places=8, null=True)
     username = models.CharField(max_length=30)
     password = models.CharField(max_length=30)
     facebook = models.CharField(max_length=100, null=True)
@@ -90,14 +88,14 @@ class JobListings(models.Model):
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
     ZIP = models.IntegerField()
-    lat = models.DecimalField(max_digits=10, decimal_places=8, null=True)
-    long = models.DecimalField(max_digits=11, decimal_places=8, null=True)
     jobDescription = models.CharField(max_length=500)
     status = models.CharField(max_length=15, null=True)
     dateFilled = models.DateField(null=True)
     savedJobListings = models.ManyToManyField(Person, related_name='user_saved_jobs', through='SavedJobs')
     applicationsTable = models.ManyToManyField(Person, related_name='user_job_applications', through='Applications')
-
+    
+    def __str__(self):
+        return (self.jobTitle)
 
 class SavedJobs(models.Model):
     savedJobID = models.AutoField(primary_key=True)
