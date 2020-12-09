@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import listingsView, loginTemplate, CreateTemplate, CreateCompanyTemplate, loggedTemplate, CreatedLoginView, deleteTemplate, deleteView, updateTemplate, updateView,profileView, listingsView, descriptionView1
+from .views import listingsView, loginTemplate, CreateTemplate, CreateCompanyTemplate, loggedTemplate, CreatedLoginView, deleteTemplate, deleteView, updateTemplate, updateView,profileView, listingsView, descriptionView1, descriptionView2,descriptionView3,descriptionView4,descriptionView5,descriptionView6,descriptionView7,descriptionView8,descriptionView9,descriptionView10,listingRecruiterView, listingjobsearchView
 urlpatterns = [
     path("", loginTemplate, name="login"),
     path("create/", CreateTemplate, name="create"),
@@ -13,13 +13,15 @@ urlpatterns = [
     path('profile/', profileView, name="profileview"),
     path('listings/', listingsView, name="listingview"),
     path('listings/description1', descriptionView1, name="descriptionview1"),
-    path('listings/description2', descriptionView1, name="descriptionview2"),
-    path('listings/description3', descriptionView1, name="descriptionview3"),
-    path('listings/description4', descriptionView1, name="descriptionview4"),
-    path('listings/description5', descriptionView1, name="descriptionview5"),
-    path('listings/description6', descriptionView1, name="descriptionview6"),
-    path('listings/description7', descriptionView1, name="descriptionview7"),
-    path('listings/description8', descriptionView1, name="descriptionview8"),
-    path('listings/description9', descriptionView1, name="descriptionview9"),
-    path('listings/description10', descriptionView1, name="descriptionview10"),
+    path('listings/description2', descriptionView2, name="descriptionview2"),
+    path('listings/description3', descriptionView3, name="descriptionview3"),
+    path('listings/description4', descriptionView4, name="descriptionview4"),
+    path('listings/description5', descriptionView5, name="descriptionview5"),
+    path('listings/description6', descriptionView6, name="descriptionview6"),
+    path('listings/description7', descriptionView7, name="descriptionview7"),
+    path('listings/description8', descriptionView8, name="descriptionview8"),
+    path('listings/description9', descriptionView9, name="descriptionview9"),
+    path('listings/description10', descriptionView10, name="descriptionview10"),
+    path('listings/recruiter', listingRecruiterView, name="listingrecruiterview"),
+    path('listings/jobsearch', listingjobsearchView, name="listingjobsearchview"),
 ]
