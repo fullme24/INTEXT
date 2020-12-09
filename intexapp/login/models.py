@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.aggregates import Min
+from django.db.models.aggregates import Min, Max
 from django.db.models.base import ModelStateFieldsCacheDescriptor
 from django.db.models.deletion import SET_NULL
 
@@ -7,10 +7,16 @@ class PersonType(models.Model):
     personTypeID = models.AutoField(primary_key=True)
     type = models.CharField(max_length=100)
 
+    def __str__(self):
+        return (self.type)
+
 class MinorityType(models.Model):
     minorityTypeID = models.AutoField(primary_key=True)
     type = models.CharField(max_length=100)
 
+    def __str__(self):
+        return (self.type)
+    
 class Resumes(models.Model):
     resumeID = models.AutoField(primary_key=True)
     resumefile = models.FileField(upload_to='photos/')
@@ -18,7 +24,7 @@ class Resumes(models.Model):
 
 class Person(models.Model):
     personID = models.AutoField(primary_key=True)
-    personTypeID = models.ForeignKey(PersonType, on_delete=models.CASCADE, null=True)
+    personTypeID = models.ForeignKey(PersonType, on_delete=models.CASCADE, default=1)
     minorityTypeID = models.ForeignKey(MinorityType, on_delete=models.CASCADE, null=True)
     resumeID = models.ForeignKey(Resumes, on_delete=models.CASCADE, null=True)
     firstName = models.CharField(max_length=50)
@@ -85,11 +91,11 @@ class JobListings(models.Model):
     companyID = models.ForeignKey(Company, on_delete=models.CASCADE)
     employeeID = models.ForeignKey(CompanyEmployee, on_delete=models.CASCADE)
     categoryTypeID = models.ForeignKey(CategoryType, on_delete=models.CASCADE)
-    jobTitle = models.CharField(max_length=100, default=SET_NULL)
+    jobTitle = models.CharField(max_length=70, default=SET_NULL)
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
     ZIP = models.IntegerField()
-    jobDescription = models.CharField(max_length=500)
+    jobDescription = models.CharField(max_length=6000)
     status = models.CharField(max_length=50, null=True)
     dateFilled = models.DateField(null=True)
     savedJobListings = models.ManyToManyField(Person, related_name='user_saved_jobs', through='SavedJobs')
