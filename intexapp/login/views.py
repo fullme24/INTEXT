@@ -68,7 +68,6 @@ def updateView(request):
         jobExperience = request.POST.get('jobExperience')
         ethnicity = request.POST.get('minorityType')
         ethnicityID = MinorityType.objects.filter(type = ethnicity)
-        print(ethnicity)
         person = Person.objects.get(username=user_name, password=password)
         
         if email != '':
@@ -91,8 +90,6 @@ def updateView(request):
             person.jobExperience = jobExperience
         if ethnicity != '':
             person.minorityTypeID_id = ethnicityID.minorityTypeID
-
-
 
         person.save()
 
