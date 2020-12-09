@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from . import views
+import login.views
+from login.models import Person
 
 # Create your views here.
 def ProfileTemplate(request) :
