@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'intex_practice',
         'USER': 'postgres',
-        'PASSWORD': '123', #possible just put in password
+        'PASSWORD': 'Seeknotto123', #possible just put in password
         'HOST' : 'localhost'
     }
 }
@@ -129,6 +129,6 @@ STATICFILES_DIRS = [
 ]
 
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

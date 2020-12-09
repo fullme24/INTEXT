@@ -6,8 +6,8 @@ from .models import Applications, Person, PersonType, MinorityType, CompanyEmplo
 
 def profileView(request) :
         persondata = Person.objects.get(pk=1)
-        companydata = Company.objects.get(pk=1)
-        jobdata = JobListings.objects.get(pk=1)
+        companydata = Company.objects.all()
+        jobdata = JobListings.objects.all()
         context = {
             "person" : persondata,
             "company": companydata,
@@ -17,30 +17,12 @@ def profileView(request) :
 
 def listingsView(request) :
         persondata = Person.objects.get(pk=1)
-        companydata = Company.objects.get(pk=1)
-        job1 = JobListings.objects.get(pk=1)
-        job2 = JobListings.objects.get(pk=2)
-        job3 = JobListings.objects.get(pk=3)
-        job4 = JobListings.objects.get(pk=4)
-        job5 = JobListings.objects.get(pk=5)
-        job6 = JobListings.objects.get(pk=6)
-        job7 = JobListings.objects.get(pk=7)
-        job8 = JobListings.objects.get(pk=8)
-        job9 = JobListings.objects.get(pk=9)
-        job10 = JobListings.objects.get(pk=10)
+        companydata = Company.objects.all()
+        jobdata = JobListings.objects.all()
         context = {
             "person" : persondata,
             "company": companydata,
-            "job1": job1,
-            "job2": job2,
-            "job3": job3,
-            "job4": job4,
-            "job5": job5,
-            "job6": job6,
-            "job7": job7,
-            "job8": job8,
-            "job9": job9,
-            "job10": job10
+            'jobs' : jobdata
         }
         return render(request, 'login/listing_company.html',context)
 

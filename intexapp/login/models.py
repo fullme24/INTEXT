@@ -48,7 +48,7 @@ class Person(models.Model):
 
 class CategoryType (models.Model):
     categoryTypeID = models.AutoField(primary_key=True)
-    type = models.CharField(max_length=15)
+    type = models.CharField(max_length=100)
 
     def __str__(self):
         return (self.type)
@@ -86,13 +86,13 @@ class JobListings(models.Model):
     companyID = models.ForeignKey(Company, on_delete=models.CASCADE)
     employeeID = models.ForeignKey(CompanyEmployee, on_delete=models.CASCADE)
     categoryTypeID = models.ForeignKey(CategoryType, on_delete=models.CASCADE)
-    jobTitle = models.CharField(max_length=20)
+    jobTitle = models.CharField(max_length=70)
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
     ZIP = models.IntegerField()
     lat = models.DecimalField(max_digits=10, decimal_places=8, null=True)
     long = models.DecimalField(max_digits=11, decimal_places=8, null=True)
-    jobDescription = models.CharField(max_length=500)
+    jobDescription = models.CharField(max_length=6000)
     status = models.CharField(max_length=15, null=True)
     dateFilled = models.DateField(null=True)
     savedJobListings = models.ManyToManyField(Person, related_name='user_saved_jobs', through='SavedJobs')

@@ -25,3 +25,6 @@ urlpatterns = [
     path('profile/',include('profile_info.urls')),
     path('job/', include('job.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

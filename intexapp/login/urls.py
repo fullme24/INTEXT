@@ -1,5 +1,8 @@
 from django.urls import path
 from .views import listingsView, loginTemplate, CreateTemplate, CreateCompanyTemplate, loggedTemplate, CreatedLoginView, deleteTemplate, deleteView, updateTemplate, updateView,profileView, listingsView, descriptionView1
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path("", loginTemplate, name="login"),
     path("create/", CreateTemplate, name="create"),
