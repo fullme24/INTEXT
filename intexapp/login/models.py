@@ -1,4 +1,5 @@
 from django.db import models
+from django.db import connections
 from django.db.models.aggregates import Min
 from django.db.models.base import ModelStateFieldsCacheDescriptor
 
@@ -6,9 +7,17 @@ class PersonType(models.Model):
     personTypeID = models.AutoField(primary_key=True)
     type = models.CharField(max_length=15)
 
+    def __str__(self):
+        return (self.type)
+
 class MinorityType(models.Model):
     minorityTypeID = models.AutoField(primary_key=True)
     type = models.CharField(max_length=15)
+    class Meta:
+        db_table = "login_minoritytype"
+    
+    def __str__(self):
+        return (self.type)
 
 class Resumes(models.Model):
     resumeID = models.AutoField(primary_key=True)
@@ -48,12 +57,17 @@ class Person(models.Model):
 
 class CategoryType (models.Model):
     categoryTypeID = models.AutoField(primary_key=True)
-    type = models.CharField(max_length=15)
+    type = models.CharField(max_length=50)
+
+    def __str__(self):
+        return (self.type)
     
 class CompanySize (models.Model):
     companySizeID = models.AutoField(primary_key=True)
     size = models.CharField(max_length=15)
 
+    def __str__(self):
+        return (self.size)
 class Company (models.Model):
     companyID = models.AutoField(primary_key=True)
     companyName = models.CharField(max_length=30)
@@ -66,11 +80,17 @@ class Company (models.Model):
     twitter = models.CharField(max_length=100, null=True)
     profilePic = models.FileField(upload_to='photos', null=True)
 
+    def __str__(self):
+        return (self.companyName)
+
 class CompanyEmployee(models.Model):
     employeeID = models.AutoField(primary_key=True)
     companyID = models.ForeignKey(Company, on_delete=models.CASCADE)
     personID = models.ForeignKey(Person, on_delete=models.CASCADE)
-    jobTitle = models.CharField(max_length=20)
+    jobTitle = models.CharField(max_length=20, null=True)
+
+    def __str__(self):
+        return (self.jobTitle)
 
 class JobListings(models.Model):
     jobListingID = models.AutoField(primary_key=True)
@@ -89,12 +109,15 @@ class JobListings(models.Model):
     savedJobListings = models.ManyToManyField(Person, related_name='user_saved_jobs', through='SavedJobs')
     applicationsTable = models.ManyToManyField(Person, related_name='user_job_applications', through='Applications')
 
+    def __str__(self):
+        return (self.jobTitle)
 
 class SavedJobs(models.Model):
     savedJobID = models.AutoField(primary_key=True)
     jobListingID = models.ForeignKey(JobListings, on_delete=models.CASCADE)
     personID = models.ForeignKey(Person, on_delete=models.CASCADE)
     dateSaved = models.DateField(auto_now=True)
+
 
 class Applications(models.Model):
     applicationID = models.AutoField(primary_key=True)
@@ -103,6 +126,7 @@ class Applications(models.Model):
     resumeID = models.ForeignKey(Resumes, on_delete=models.CASCADE)
     matchingSkills = models.IntegerField()
     dateApplied = models.DateField(auto_now=True)
+
 
 class JobOffers(models.Model):
     jobOfferID = models.AutoField(primary_key=True)
@@ -115,6 +139,9 @@ class JobOffers(models.Model):
 class Skills(models.Model):
     skillID = models.AutoField(primary_key=True)
     skillName = models.CharField(max_length=50)
+
+    def __str__(self):
+        return (self.skillName)
 
 class SkillLevel(models.Model):
     skillLevelID = models.AutoField(primary_key=True)

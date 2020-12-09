@@ -38,11 +38,21 @@
                     <legend>2. Setup Job Preference</legend>
                     {% csrf_token %}
                     <select class="selectpicker border-right">
-                        <option>Technology</option>
-                        <option>Agriculture</option>
-                        <option>Business</option>
-                        <option>Pharmacy</option>
-                        <option>Service</option>
+                        <option>----Select Job Preference----</option>
+                        {% for job in jobtypes %}
+                        <option>{{job.type}}</option>
+                        {% endfor %}
+                    </select>
+                </fieldset>
+                <br><br>
+                <fieldset>
+                    <legend>3. Demographics</legend>
+                    {% csrf_token %}
+                    <select id="ethnicity" class="selectpicker border-right">
+                        <option>----Select Ethnicity----</option>
+                        {% for eth in minorityTypes%}
+                        <option>{{eth.type}}</option>
+                        {% endfor %}
                     </select>
                 </fieldset>
                 <br><br>
@@ -56,10 +66,10 @@
                     <form method="POST" enctype="multipart/form-data" name="form">
                         {% csrf_token %}
                         <input type="file" name="profile" id="profile">
-                        <button type="submit">Create Account</button>
                     </form>
                     <br><br>
                 </fieldset>
+                <button type="submit">Create Account</button>
             </form>
             <br>
            
