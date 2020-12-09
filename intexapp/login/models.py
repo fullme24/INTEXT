@@ -7,7 +7,7 @@ class PersonType(models.Model):
     type = models.CharField(max_length=15)
 
 class MinorityType(models.Model):
-    minorityTypeID = models.AutoField(primary_key=True)
+    minorityTypeID = models.AutoField()
     type = models.CharField(max_length=15)
 
 class Resumes(models.Model):
