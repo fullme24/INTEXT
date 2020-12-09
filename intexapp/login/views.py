@@ -4,6 +4,64 @@ from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 from .models import Applications, Person, PersonType, MinorityType, CompanyEmployee, Company, CategoryType, CompanySize, JobListings, JobOffers, Resumes, SavedJobs, SkillLevel, Skills, Applications, Resumes
 
+
+def listingRecruiterView(request) :
+        persondata = Person.objects.get(pk=1)
+        companydata = Company.objects.get(pk=1)
+        job1 = JobListings.objects.get(pk=1)
+        job2 = JobListings.objects.get(pk=2)
+        job3 = JobListings.objects.get(pk=3)
+        job4 = JobListings.objects.get(pk=4)
+        job5 = JobListings.objects.get(pk=5)
+        job6 = JobListings.objects.get(pk=6)
+        job7 = JobListings.objects.get(pk=7)
+        job8 = JobListings.objects.get(pk=8)
+        job9 = JobListings.objects.get(pk=9)
+        job10 = JobListings.objects.get(pk=10)
+        context = {
+            "person" : persondata,
+            "company": companydata,
+            "job1": job1,
+            "job2": job2,
+            "job3": job3,
+            "job4": job4,
+            "job5": job5,
+            "job6": job6,
+            "job7": job7,
+            "job8": job8,
+            "job9": job9,
+            "job10": job10
+        }
+        return render(request, 'login/listing_recruiter.html',context)
+def listingjobsearchView(request) :
+        persondata = Person.objects.get(pk=1)
+        companydata = Company.objects.get(pk=1)
+        job1 = JobListings.objects.get(pk=1)
+        job2 = JobListings.objects.get(pk=2)
+        job3 = JobListings.objects.get(pk=3)
+        job4 = JobListings.objects.get(pk=4)
+        job5 = JobListings.objects.get(pk=5)
+        job6 = JobListings.objects.get(pk=6)
+        job7 = JobListings.objects.get(pk=7)
+        job8 = JobListings.objects.get(pk=8)
+        job9 = JobListings.objects.get(pk=9)
+        job10 = JobListings.objects.get(pk=10)
+        context = {
+            "person" : persondata,
+            "company": companydata,
+            "job1": job1,
+            "job2": job2,
+            "job3": job3,
+            "job4": job4,
+            "job5": job5,
+            "job6": job6,
+            "job7": job7,
+            "job8": job8,
+            "job9": job9,
+            "job10": job10
+        }
+        return render(request, 'login/jobsearch.html',context)
+
 def profileView(request) :
         persondata = Person.objects.get(pk=1)
         companydata = Company.objects.get(pk=1)
