@@ -1,1 +1,1 @@
-web: gunicorn intexapp.wsgi
+web: gunicorn blackcyberrecruiter.wsgi
