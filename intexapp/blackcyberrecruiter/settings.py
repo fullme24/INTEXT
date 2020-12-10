@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'blackcyberrecruiter.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'intex',
+        'NAME': 'intex_heroku',
         'USER': 'postgres',
         'PASSWORD': 'Seeknotto123', #possible just put in password
         'HOST' : 'localhost'
