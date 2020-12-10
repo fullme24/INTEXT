@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<section class="login-wrapper">
+			<div class="container">
+				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
+					<form action="{% url 'get_infor_for_profile' personID=personID personTypeID=personTypeID%}" method="post" name="form">
+						<fieldset>
+						    <legend>
+							    Enter Account Information
+						    </legend>
+						    {% csrf_token %}
+						    <div class="col-md-3 col-sm-3 no-pad">
+                                <select class="selectpicker " name='name'>
+                                    {% for iCount in person%}
+                                    <option>{{iCount.firstName}} {{iCount.lastName}}</option>
+                                    {% endfor %}
+                                </select>
+						    </div>
+						    <input id="submitbutton" type="submit">
+						    <p>{{person_data}}</p>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</section>
+{% endblock %}

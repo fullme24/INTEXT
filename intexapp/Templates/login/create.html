@@ -50,13 +50,13 @@
                         {% endfor %}
                     </select>
                     <br><br>
-                    <legend>3. Upload Your Resume</legend>
+                    <legend>4. Upload Your Resume</legend>
                     <form method="POST" enctype="multipart/form-data" name="form">
                         {% csrf_token %}
                         <input type="file" name="resume" id="resume">
                     </form>
                     <br><br>
-                    <legend>4. Upload Your Profile Picture</legend>
+                    <legend>5. Upload Your Profile Picture</legend>
                     <form method="POST" enctype="multipart/form-data" name="form">
                         {% csrf_token %}
                         <input type="file" name="profile" id="profile">
